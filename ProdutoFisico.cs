@@ -22,11 +22,22 @@ namespace Projeto3
 
         public void AdicionarEntrada()
         {
-
+            Console.WriteLine($"Adicionar Entrada no estoque do Produto {nome}");
+            Console.WriteLine($"Digita a qtd que você quer dar entrada: ");
+            int entrada = int.Parse(Console.ReadLine());
+            estoque += entrada;
+            Console.WriteLine("Entrada Registrada");
+            Console.ReadLine();
         }
 
         public void AdicionarSaida()
         {
+            Console.WriteLine($"Adicionar saida no estoque do Produto {nome}");
+            Console.WriteLine("Digita a qtd que você quer dar baixa: ");
+            int entrada = int.Parse(Console.ReadLine());
+            estoque -= entrada;
+            Console.WriteLine("Saída Registrada");
+            Console.ReadLine();
         }
 
         public void Exibir()

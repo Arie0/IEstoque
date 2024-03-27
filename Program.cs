@@ -33,15 +33,19 @@ namespace Projeto3
                     {
 
                         case Menu.Listar:
+                            Listagem();
                             break;
                         case Menu.Adicionar:
                             Cadastro();
                             break;
                         case Menu.Remover:
+                            Remover();
                             break;
                         case Menu.Entrada:
+                            AdcEntrada();
                             break;
                         case Menu.Saida:
+                            AdcSaida();
                             break;
                         case Menu.Sair:
                             escolheuSair = true;
@@ -54,6 +58,55 @@ namespace Projeto3
                 }
                 Console.Clear();
             }
+        }
+
+        static void Listagem()
+        {
+            Console.WriteLine("Lista de produtos");
+            int i = 0;
+            foreach(IEstoque produto in produtos)
+            {
+                Console.WriteLine("ID: " + i);
+                produto.Exibir();
+                i++;
+            }
+            Console.ReadLine();
+        }
+
+        static void Remover()
+        {
+            Listagem();
+            Console.WriteLine("Digite o ID do elemento que voce quer remover: ");
+            int id = int.Parse(Console.ReadLine());
+            if (id >= 0 && id <produtos.Count)
+            {
+                produtos.RemoveAt(id);
+                Salvar();
+            }
+        }
+
+        static void AdcEntrada()
+        {
+            Listagem();
+            Console.WriteLine("Digite o ID do elemento que voce quer dar entrada: ");
+            int id = int.Parse(Console.ReadLine());
+            if (id >= 0 && id < produtos.Count)
+            {
+                produtos[id].AdicionarEntrada();
+                Salvar();
+            }
+        } 
+        static void AdcSaida()
+        {
+            Listagem();
+            Console.WriteLine("Digite a qtd que você quer dar baixa: ");
+            int id = int.Parse(Console.ReadLine());
+            if (id >= 0 && id < produtos.Count)
+            {
+                produtos[id].AdicionarSaida();
+                Salvar();
+            }
+
         }
 
         static void Cadastro()

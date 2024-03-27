@@ -21,10 +21,18 @@ namespace Projeto3
 
 public void AdicionarEntrada()
         {
+            Console.WriteLine("Não é possível dar entrada, pois é um produto digital.");
+            Console.ReadLine();
         }
 
         public void AdicionarSaida()
         {
+            Console.WriteLine($"Adicionar vendas no Ebook {nome}");
+            Console.WriteLine("Digita a qtd de vendas que você quer dar entrada: ");
+            int entrada = int.Parse(Console.ReadLine());
+            vendas -= entrada;
+            Console.WriteLine("Saída Registrada");
+            Console.ReadLine();
         }
 
         public void Exibir()

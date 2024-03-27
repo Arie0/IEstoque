@@ -22,10 +22,22 @@ namespace Projeto3
 
         public void AdicionarEntrada()
         {
+            Console.WriteLine($"Adicionar vagas no curso {nome}");
+            Console.WriteLine($"Digita a qtd de vagas que você quer dar entrada: ");
+            int entrada = int.Parse(Console.ReadLine());
+            vagas += entrada;
+            Console.WriteLine("Entrada Registrada");
+            Console.ReadLine();
         }
 
         public void AdicionarSaida()
         {
+            Console.WriteLine($"Consumir vagas no curso  {nome}");
+            Console.WriteLine("Digita a qtd de vagas que você quer consumir: ");
+            int entrada = int.Parse(Console.ReadLine());
+            vagas -= entrada;
+            Console.WriteLine("Saída Registrada");
+            Console.ReadLine();
         }
 
         public void Exibir()
